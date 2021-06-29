@@ -9,6 +9,14 @@
 git clone https://github.com/zeliwipin/mern-frontend-boilerplate
 ```
 
+## How to use it ?
+
+```
+This project goes with the backend if you want to build a fullstack application.
+https://github.com/zeliwipin/mern-backend-boilerplate
+
+```
+
 ## Usage
 
 ```
