@@ -1,6 +1,5 @@
 # mern-frontend-boilerplate
 
-![alt text](https://i.ibb.co/Lhf0zTd/LOGIN-1.jpg)
 
 ## Installation
 
