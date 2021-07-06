@@ -1,4 +1,4 @@
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
 //import axios to make api request
@@ -106,6 +106,7 @@ const Login = () => {
                   setErrorMessagePasswordIsWrong(false);
                   setSuccessMessageLogin(true);
                   Cookies.set("tokenChat", response.data.token, { expires: 1 });
+                  Cookies.set("name", email);
                   history.push("/");
                   window.location.reload(false);
                 }

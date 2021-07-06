@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
 
 const Header = ({ checkIfUserIsConnected }) => {
-  const [userToken, setUserToken] = useState(Cookies.get("tokenChat"));
+  const [userToken] = useState(Cookies.get("tokenChat"));
   let history = useHistory();
   return (
     <div
@@ -52,8 +52,10 @@ const Header = ({ checkIfUserIsConnected }) => {
         {userToken ? (
           <button
             className="btn btn-1"
+            id="specialLogout"
             onClick={() => {
               Cookies.remove("tokenChat");
+              Cookies.remove("name");
               history.push("/login");
             }}
           >

@@ -2,12 +2,7 @@
 import "./App.css";
 
 //import react router
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import useState
 import { useState } from "react";
 //import js-cookie to check if the user is authenticated
@@ -18,19 +13,10 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import NotFound from "./components/NotFound";
+import Chatroom from "./components/Chatroom";
 
 function App() {
-  const [userToken, setUserToken] = useState(Cookies.get("tokenChat"));
-
-  const setUser = (token) => {
-    if (token) {
-      Cookies.set("tokenChat", token, { expires: 7 });
-      setUserToken(token);
-    } else {
-      Cookies.remove("tokenChat");
-      setUserToken(null);
-    }
-  };
+  const [userToken] = useState(Cookies.get("tokenChat"));
 
   /* utility function to check if the user is connected */
 
@@ -47,7 +33,7 @@ function App() {
           <Route exact path="/register">
             <Register />
           </Route>
-
+          <Route exact path="/:roomId" component={Chatroom} />
           <Route component={NotFound} />
         </Switch>
       </Router>
