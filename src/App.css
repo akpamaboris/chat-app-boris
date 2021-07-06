@@ -1,38 +1,68 @@
-.App {
+/* import the police roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+/* import the police roboto */
+
+/* ----------  */
+/* ----------  */
+
+/* Box sizing for everything */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+/* Box Sizing  for everything */
+
+/* ----------  */
+/* ----------  */
+
+body {
+  font-family: "Roboto";
+  background: linear-gradient(
+    90deg,
+    rgba(22, 135, 144, 1) 0%,
+    rgba(16, 35, 80, 1) 100%
+  );
+  color: lightgray;
+}
+
+/* Form center */
+
+.formCenter {
+  width: 40%;
+  margin: 0 auto;
   text-align: center;
+  padding-top: 100px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* FOR THE BUTTONS */
+.btn {
+  background: none;
+  border: none;
+  outline: inherit;
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 100% auto;
   color: white;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 3px;
+  cursor: pointer;
+  max-width: 150px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-1 {
+  background-color: #126cdb;
+  box-shadow: 0 25px 40px -20px #0b478f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#specialbtn {
+  cursor: auto;
+  background-color: #0b478f;
+  box-shadow: 0 25px 40px -20px #126cdb;
 }
+/* FOR THE BUTTONS */
