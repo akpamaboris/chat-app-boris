@@ -142,3 +142,12 @@ body {
 .send-message-button {
   border-color: #9a9a9a;
 }
+
+.quit-chat-button {
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  background: #db4c3d;
+  padding: 24px 12px;
+  border: none;
+}

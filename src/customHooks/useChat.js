@@ -32,6 +32,7 @@ const useChat = (roomId) => {
       body: messageBody,
       realName: name,
       senderId: socketRef.current.id,
+      roomId: roomId,
     });
   };
 
