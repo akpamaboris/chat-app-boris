@@ -10,7 +10,7 @@ import { TextField } from "@material-ui/core";
 
 //import MUI styles
 
-const SOCKET_SERVER_URL = "https://chat-app-topitech.herokuapp.com/";
+const SOCKET_SERVER_URL = "https://chat-app-topitech.herokuapp.com";
 
 const Home = () => {
   const [roomName, setRoomName] = useState("");
@@ -86,25 +86,37 @@ const Home = () => {
             ROOMS CREATED :
           </button>
           <div>
-            {rooms.length > 0
-              ? rooms.map((room, id) => {
-                  return (
-                    <div key={room._id}>
-                      <div>
-                        <button
-                          onClick={() => {
-                            setRoomName(room.name);
-                          }}
-                          className="btnChat"
-                          id="specialbtn2"
-                        >
-                          - {room.name}
-                        </button>
-                      </div>
+            {rooms.length > 0 ? (
+              rooms.map((room, id) => {
+                return (
+                  <div key={room._id}>
+                    <div>
+                      <button
+                        onClick={() => {
+                          setRoomName(room.name);
+                        }}
+                        className="btnChat"
+                        id="specialbtn2"
+                      >
+                        - {room.name}
+                      </button>
+                      <button
+                        onClick={() => {
+                          socketRef.current.emit("deleteRoom", {
+                            roomName: room.name,
+                          });
+                          window.location.reload();
+                        }}
+                      >
+                        ❌
+                      </button>
                     </div>
-                  );
-                })
-              : null}
+                  </div>
+                );
+              })
+            ) : (
+              <span>no rooms yet</span>
+            )}
           </div>
         </div>
         {/* second div*/}
