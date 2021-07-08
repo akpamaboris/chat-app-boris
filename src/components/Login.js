@@ -94,7 +94,7 @@ const Login = () => {
               setErrorMessageSomeFormsAreNotFilled(false);
               try {
                 const response = await axios.post(
-                  "http://localhost:3010/login",
+                  "https://chat-app-topitech.herokuapp.com/login",
                   {
                     email: email,
                     password: password,

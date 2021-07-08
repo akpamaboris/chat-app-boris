@@ -9,7 +9,7 @@ import { useHistory, Redirect } from "react-router-dom";
 //import js-cookie for authentication
 import Cookies from "js-cookie";
 
-const SOCKET_SERVER_URL = "http://localhost:3010";
+const SOCKET_SERVER_URL = "https://chat-app-topitech.herokuapp.com";
 
 const Chatroom = (props) => {
   let history = useHistory(); // rappel

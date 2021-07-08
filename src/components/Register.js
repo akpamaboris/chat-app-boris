@@ -93,7 +93,7 @@ const Register = ({ checkIfUserIsConnected }) => {
               setErrorMessageSomeFormsAreNotFilled(false);
               try {
                 const response = await axios.post(
-                  "http://localhost:3010/signup",
+                  "https://chat-app-topitech.herokuapp.com/signup",
                   {
                     email: email,
                     username: username,
