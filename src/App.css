@@ -54,6 +54,22 @@ body {
   cursor: pointer;
   max-width: 150px;
 }
+.btnChat {
+  background: none;
+  border: none;
+  outline: inherit;
+  flex: 1 1 auto;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 100% auto;
+  color: white;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 3px;
+  cursor: pointer;
+  max-width: 150px;
+}
 
 .btn-1 {
   background-color: #126cdb;
@@ -66,6 +82,11 @@ body {
   box-shadow: 0 25px 40px -20px #126cdb;
 }
 
+#specialbtn2 {
+  cursor: auto;
+  background-color: #30db7e;
+  box-shadow: 0 25px 40px -20px #3c7354;
+}
 #specialLogout {
   background-color: #db4c3d;
   box-shadow: 0 25px 40px -20px #db4c3d;
