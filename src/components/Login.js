@@ -1,6 +1,8 @@
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
+import Loader from "react-loader-spinner";
+
 //import axios to make api request
 import axios from "axios";
 
@@ -22,6 +24,8 @@ import Header from "./Header";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [isLoading, setIsLoading] = useState(false);
 
   let history = useHistory();
   const classes = useStyles();
@@ -89,6 +93,7 @@ const Login = () => {
         <form
           className={classes.root}
           onSubmit={(event) => {
+            setIsLoading(true);
             event.preventDefault();
             const sendForm = async () => {
               setErrorMessageSomeFormsAreNotFilled(false);
@@ -103,6 +108,7 @@ const Login = () => {
 
                 console.log(response.data);
                 if (response.data.token) {
+                  setIsLoading(false);
                   setErrorMessagePasswordIsWrong(false);
                   setSuccessMessageLogin(true);
                   Cookies.set("tokenChat", response.data.token, { expires: 1 });
@@ -114,6 +120,7 @@ const Login = () => {
                 console.error(error.message);
                 setSuccessMessageLogin(false);
                 setErrorMessagePasswordIsWrong(true);
+                setIsLoading(false);
               }
             };
             if (checkIfAllTheFormsAreFilled() === true) {
@@ -145,6 +152,15 @@ const Login = () => {
             <TextField type="submit" variant="filled" />
           </div>
         </form>
+        {isLoading ? (
+          <Loader
+            type="Ball-Triangle"
+            color="#00BFFF"
+            height={100}
+            width={100}
+            timeout={3000} //3 secs
+          />
+        ) : null}
         {signUpMessages()}
       </div>
     </div>
